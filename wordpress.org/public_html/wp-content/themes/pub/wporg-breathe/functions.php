@@ -7,6 +7,7 @@ namespace WordPressdotorg\Make\Breathe;
 function after_setup_theme() {
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'editor-styles' );
 
 	remove_theme_support( 'custom-header' );
 	remove_theme_support( 'custom-background' );
@@ -23,6 +24,8 @@ function after_setup_theme() {
 	add_filter( 'mkaz_prism_css_path', function() {
 		return '/assets/prism/prism.css';
 	} );
+	
+	add_editor_style( 'style.css' );
 }
 add_action( 'after_setup_theme', __NAMESPACE__ . '\after_setup_theme', 11 );
 
